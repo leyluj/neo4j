@@ -26,7 +26,7 @@ module Neo4j::ActiveRel
       loaded? ? @node.neo_id : @node
     end
 
-    # Loads a node from the database or returns the node if already laoded
+    # Loads a node from the database or returns the node if already loaded
     def loaded
       fail UnsetRelatedNodeError, 'Node not set, cannot load' if @node.nil?
       @node = if @node.respond_to?(:neo_id)
